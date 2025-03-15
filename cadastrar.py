@@ -41,7 +41,7 @@ def criar_janela_cadastro(lista_linha_dados):
     janela = tk.Tk()
 
     # título da janela
-    janela.title("Ferramenta de cadastro de materiais")
+    janela.title("Ferramenta de Cadastro de Materiais")
 
     # criar um rótulo de descrição
     rotulo_descricao = tk.Label(text="Descrição do Material")
@@ -56,7 +56,7 @@ def criar_janela_cadastro(lista_linha_dados):
     entrada_dados_descricao.grid(row=2, column=0, padx=10, pady=10, sticky='nswe', columnspan=4)
 
     # criar a rótulo de tipo de unidade
-    rotulo_tipo_unidade = tk.Label(text="Tipo da unidade do material")
+    rotulo_tipo_unidade = tk.Label(text="Tipo da Unidade do Material")
 
     # adicionar o rótulo à janela
     rotulo_tipo_unidade.grid(row=3, column=0, padx=10, pady=10, sticky='nswe', columnspan=2)
@@ -67,28 +67,40 @@ def criar_janela_cadastro(lista_linha_dados):
     # adicionar o combobox à janela
     combobox_selecionar_tipo.grid(row=3, column=2, padx=10, pady=10, sticky='nswe', columnspan=2)
 
+    # criar rótulo do preço da unidade do material
+    rotulo_preco_unidade = tk.Label(text="Preço da Unidade do Material")
+
+    # adicionar o rótulo do preço à janela
+    rotulo_preco_unidade.grid(row=4, column=0, padx=10, pady=10, sticky='nswe', columnspan=2)
+
+    # criar entrada de dados do preço
+    entrada_dados_preco_unidade = tk.Entry()
+
+    # adicionar a entrada de dados do preço à janela
+    entrada_dados_preco_unidade.grid(row=4, column=2, padx=10, pady=10, sticky='nswe', columnspan=2)
+
     # criar o rótulo da quantidade
-    rotulo_qtd = tk.Label(text="Quantidade da unidade de material")
+    rotulo_qtd = tk.Label(text="Quantidade da Unidade do Material")
 
     # adicionar o rótulo de quantidade à janela
-    rotulo_qtd.grid(row=4, column=0, padx=10, pady=10, sticky='nswe', columnspan=2)
+    rotulo_qtd.grid(row=5, column=0, padx=10, pady=10, sticky='nswe', columnspan=2)
 
     # criar uma entrada de dados de quantidade
     entrada_dados_quantidade = tk.Entry()
 
     # adicionar a entrada de quantidade à janela
-    entrada_dados_quantidade.grid(row=4, column=2, padx=10, pady=10, sticky='nswe', columnspan=2)
+    entrada_dados_quantidade.grid(row=5, column=2, padx=10, pady=10, sticky='nswe', columnspan=2)
 
     # usar a função 'partial' para passar a função com argumentos
     obter_dados_janela_arg = partial(obter_dados_janela, lista_linha_dados, entrada_dados_descricao,
                        combobox_selecionar_tipo, entrada_dados_quantidade)
 
     # criar um botão para submeter as informações
-    botao_ok = tk.Button(text="Enviar dados", command=obter_dados_janela_arg)
+    botao_ok = tk.Button(text="Cadastrar Dados", command=obter_dados_janela_arg)
     # botao_ok = tk.Button(text="Enviar dados")
 
     # adicionar o botão ok à janela
-    botao_ok.grid(row=5, column=0, padx=10, pady=10, sticky='nswe', columnspan=4)
+    botao_ok.grid(row=6, column=0, padx=10, pady=10, sticky='nswe', columnspan=4)
 
     janela.mainloop()
 
