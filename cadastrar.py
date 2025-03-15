@@ -9,6 +9,10 @@ def obter_dados_janela(lista_linha_dados, entrada_dados_descricao,
 
     """
     Obtém os dados de entrada informados na janela de cadastro.
+    : lista_linha_dados: lista para armazenar os dados cadastrados
+    : entrada_dados_descricao: entrada de dados da descrição dos materiais
+    : combobox_selecionar_tipo: entrada de dados dos tipos de unidades dos materiais
+    : entrada_dados_quantidade: entrada de dados da quantidade dos materiais
     """
 
     descricao = entrada_dados_descricao.get()
@@ -23,6 +27,12 @@ def obter_dados_janela(lista_linha_dados, entrada_dados_descricao,
 
 
 def criar_janela_cadastro(lista_linha_dados):
+
+    """
+    Cria a janela de cadastro com os rótulos e
+    espaços para entradas de dados.
+    : lista_linha_dados: lista para armazenar os dados cadastrados
+    """
 
     # lista com opções de unidade
     lista_tipos = ["Galão", "Caixa", "Saco", "Unidade"]
@@ -84,27 +94,14 @@ def criar_janela_cadastro(lista_linha_dados):
 
     print(lista_linha_dados)
     
-
-
-    
 def main():
 
+    # inicializar lista que armazenará as linhas de dados
     lista_linha_dados = []
-    criar_janela_cadastro(lista_linha_dados)
-    
 
-# def main():
-    
-#     lista_linha_dados = []
-    
-#     # # exibe a janela de cadastro
-#     # entrada_dados_descricao, combobox_selecionar_tipo,\
-#     # entrada_dados_quantidade = criar_janela_cadastro()
-#     criar_janela_cadastro(lista_linha_dados)
-    
-#     # lista_linha_dados = obter_dados_janela(entrada_dados_descricao, combobox_selecionar_tipo,
-#     #                                        entrada_dados_quantidade, lista_linha_dados)
-    
+    # criar janela de cadastro
+    criar_janela_cadastro(lista_linha_dados)
+
 if __name__ == "__main__":
     main()
 
